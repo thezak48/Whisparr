@@ -90,6 +90,7 @@ class SeriesIndexPoster extends Component {
       isSearchingSeries,
       onRefreshSeriesPress,
       onSearchPress,
+      safeForWork,
       ...otherProps
     } = this.props;
 
@@ -162,6 +163,7 @@ class SeriesIndexPoster extends Component {
             to={link}
           >
             <SeriesPoster
+              className={safeForWork ? styles.posterSfw : styles.poster}
               style={elementStyle}
               images={images}
               size={250}
@@ -279,7 +281,8 @@ SeriesIndexPoster.propTypes = {
   isRefreshingSeries: PropTypes.bool.isRequired,
   isSearchingSeries: PropTypes.bool.isRequired,
   onRefreshSeriesPress: PropTypes.func.isRequired,
-  onSearchPress: PropTypes.func.isRequired
+  onSearchPress: PropTypes.func.isRequired,
+  safeForWork: PropTypes.bool
 };
 
 SeriesIndexPoster.defaultProps = {

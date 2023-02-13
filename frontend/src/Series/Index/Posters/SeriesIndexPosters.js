@@ -6,7 +6,7 @@ import SeriesIndexItemConnector from 'Series/Index/SeriesIndexItemConnector';
 import dimensions from 'Styles/Variables/dimensions';
 import getIndexOfFirstCharacter from 'Utilities/Array/getIndexOfFirstCharacter';
 import hasDifferentItemsOrOrder from 'Utilities/Object/hasDifferentItemsOrOrder';
-import SeriesIndexPoster from './SeriesIndexPoster';
+import SeriesIndexPosterConnector from './SeriesIndexPosterConnector';
 import styles from './SeriesIndexPosters.css';
 
 // Poster container dimensions
@@ -230,7 +230,7 @@ class SeriesIndexPosters extends Component {
       >
         <SeriesIndexItemConnector
           key={series.id}
-          component={SeriesIndexPoster}
+          component={SeriesIndexPosterConnector}
           sortKey={sortKey}
           posterWidth={posterWidth}
           posterHeight={posterHeight}

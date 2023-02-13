@@ -1,17 +1,14 @@
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import createDimensionsSelector from 'Store/Selectors/createDimensionsSelector';
-import createExistingSeriesSelector from 'Store/Selectors/createExistingSeriesSelector';
-import AddNewSeriesSearchResult from './AddNewSeriesSearchResult';
+import SeriesIndexPoster from './SeriesIndexPoster';
 
 function createMapStateToProps() {
   return createSelector(
-    createExistingSeriesSelector(),
     createDimensionsSelector(),
     (state) => state.settings.safeForWorkMode,
-    (isExistingSeries, dimensions, safeForWork) => {
+    (dimensions, safeForWork) => {
       return {
-        isExistingSeries,
         isSmallScreen: dimensions.isSmallScreen,
         safeForWork
       };
@@ -19,4 +16,4 @@ function createMapStateToProps() {
   );
 }
 
-export default connect(createMapStateToProps)(AddNewSeriesSearchResult);
+export default connect(createMapStateToProps)(SeriesIndexPoster);
